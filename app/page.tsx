@@ -1,3 +1,5 @@
+'use client'
+import User from './User'
 
 var fname: string[] = [];
 const Home = () => {
@@ -7,24 +9,27 @@ const Home = () => {
       let data = await res.json();
 
       for (var x in data) {
-        fname[+x]  = data[x].prod_name;
+        fname[+x] = data[x].prod_name;
+        console.log(data)
       }
     } catch (err) {
       console.error(err);
     }
   };
 
-    callAPI();
+  callAPI();
 
   return (
     <div className=''>
       <main className=''>
-       
-      <ul>
-        {fname.map((name, index) => (
-          <li key={index}>{name}</li>
-        ))}
-      </ul>      </main>
+      <User />
+        <ul>
+          {fname.map((name, index) => (
+            <li key={index}>{name}</li>
+          ))}
+        </ul>     
+
+        </main>
     </div>
   );
 };

@@ -1,11 +1,12 @@
-import React from 'react'
-
-const User = () => {
-  return (
-    <div>
-      Is a
-    </div>
-  )
+export default function User() {
+	const getsomeFruit = async (item:any) => {
+		alert('hello '+item)
+	};
+	return (
+		<div >
+			<main >
+				<button onClick={()=>getsomeFruit(" Santosh")}>Make API Call</button>
+			</main>
+		</div>
+	);
 }
-
-export default User
